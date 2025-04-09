@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import Banner from "./Components/Banner";
+import Main from "./Components/Main";
+import Footer from "./Components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Product from "./Components/Product";
+import Item from "./Components/Item";
+import Suscribe from "./Components/Suscribe";
+import Testomonials from "./Components/Testomonials";
 
 function App() {
+  const [orderPopup, setOrderPopup] = useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+
+  useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar handleOrderPopup={handleOrderPopup} />
+      <Main handleOrderPopup={handleOrderPopup} />
+      <Product />
+      <Item handleOrderPopup={handleOrderPopup} />
+      <Banner />
+      <Suscribe />
+      <Testomonials />
+      <Footer />
+    </>
   );
 }
 
