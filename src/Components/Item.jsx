@@ -74,6 +74,22 @@ const Item = ({ handleOrderPopup }) => {
             ))}
           </div>
         </div>
+
+        {/* Let's Start Section */}
+        <div className="mt-32 text-center">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
+            Let's Start Shopping!
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
+            Explore our best offers and find the perfect product for you.
+          </p>
+          <button
+            onClick={handleOrderPopup}
+            className="mt-8 bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full text-lg duration-300"
+          >
+            Start Now
+          </button>
+        </div>
       </div>
     </div>
   );

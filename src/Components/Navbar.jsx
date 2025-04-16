@@ -1,51 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [theme, setTheme] = useState("light");
+
+  // apply theme to <html> element
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <nav className="bg-blue-100 shadow-md">
+    <nav className="bg-blue-100 dark:bg-gray-900 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="ml-2 text-xl font-bold text-gray-800">ShopMe</span>
+            <span className="ml-[-1rem] sm:ml-2 text-xl font-bold text-gray-800 dark:text-white">
+              ShopMe
+            </span>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center justify-center flex-1">
             <div className="flex space-x-8">
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                Top Rated
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                Kids Wear
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                Mens Wear
-              </a>
-              <a
-                href="#"
-                className="text-gray-700 hover:text-blue-600 font-medium"
-              >
-                Electronics
-              </a>
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              {[
+                "Home",
+                "Top Rated",
+                "Kids Wear",
+                "Mens Wear",
+                "Electronics",
+              ].map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 font-medium"
+                >
+                  {item}
+                </a>
+              ))}
+              <button className="text-gray-700 dark:text-gray-300 hover:text-blue-600 font-medium flex items-center">
                 Trending Products
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,17 +66,18 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Search Bar */}
+          {/* Search, Cart, Theme */}
           <div className="flex items-center">
-            <div className="relative rounded-lg overflow-hidden flex items-center bg-white">
+            {/* Search Bar */}
+            <div className="relative rounded-lg overflow-hidden flex items-center bg-white dark:bg-gray-800">
               <input
                 type="text"
                 placeholder="Search"
-                className="py-1 pl-3 pr-10 w-48 outline-none text-gray-700"
+                className="py-1 pl-3 pr-10 w-48 outline-none text-gray-700 dark:text-white dark:bg-gray-800"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button className="absolute right-0 top-0 h-full px-2 text-gray-600 hover:text-gray-800">
+              <button className="absolute right-0 top-0 h-full px-2 text-gray-600 hover:text-gray-800 dark:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -93,7 +95,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Cart Button */}
+            {/* Cart */}
             <div className="ml-4">
               <button className="flex items-center justify-center p-2 rounded-full bg-blue-500 text-white">
                 <svg
@@ -115,7 +117,10 @@ const Navbar = () => {
 
             {/* Theme Toggle */}
             <div className="ml-2">
-              <button className="flex items-center justify-center p-2 rounded-full bg-yellow-400 text-white">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center justify-center p-2 rounded-full bg-yellow-400 text-white"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"

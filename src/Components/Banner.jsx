@@ -23,7 +23,9 @@ const Banner = () => {
             <div className="flex flex-col justify-center gap-4 md:gap-6 text-center">
               <h1
                 data-aos="fade-up"
-                className="text-2xl md:text-4xl w-[550px] font-bold"
+                // className="text-xl sm:text-2xl md:text-4xl w-full max-w-[450px] font-bold"
+                // className="text-2xl md:text-4xl  w-[450px] font-bold "
+                className="text-2xl md:text-4xl w-[90%] sm:w-[400px] md:w-[450px] font-bold"
               >
                 Winter sale upto 45% off!
               </h1>

@@ -70,8 +70,10 @@ const Product = () => {
                 <img
                   src={data.image}
                   alt={data.title}
+                  aria-label={data.title}
                   className="h-[290px] w-[225px] object-cover rounded-md"
                 />
+
                 <div className="mt-2">
                   <h3 className="font-bold">{data.title}</h3>
                   <p className="text-sm text-gray-600">{data.color}</p>
@@ -84,7 +86,7 @@ const Product = () => {
             ))}
           </div>
           <div className="flex justify-center">
-            <button className="mt-10 cursor-pointer bg-primary text-white py-2 px-6 rounded-md">
+            <button className="mt-10 cursor-pointer bg-primary text-white py-2 px-6 rounded-md hover:bg-gray-700 transition duration-300">
               View All Products
             </button>
           </div>
