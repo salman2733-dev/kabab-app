@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kabab-app/static/css/main.cb6bb565.css",
+    "main.js": "/kabab-app/static/js/main.d11c2f23.js",
+    "static/js/453.a2dcf160.chunk.js": "/kabab-app/static/js/453.a2dcf160.chunk.js",
+    "static/media/one.jpg": "/kabab-app/static/media/one.5ccc0988e28cc3e19c34.jpg",
+    "static/media/two.jpg": "/kabab-app/static/media/two.8e1f97c19a6f40c5a148.jpg",
+    "static/media/Shopping.jpg": "/kabab-app/static/media/Shopping.d4c6c6ebddbdb2f338a4.jpg",
+    "static/media/three.jpg": "/kabab-app/static/media/three.edcd77f02491aef92f4f.jpg",
+    "static/media/Mens.jpg": "/kabab-app/static/media/Mens.4b13f7385ea43e47cd0a.jpg",
+    "static/media/Women.jpg": "/kabab-app/static/media/Women.2d04362f7705182abcf7.jpg",
+    "static/media/ethics.jpg": "/kabab-app/static/media/ethics.e31bd6c5a995e78e102e.jpg",
+    "index.html": "/kabab-app/index.html",
+    "main.cb6bb565.css.map": "/kabab-app/static/css/main.cb6bb565.css.map",
+    "main.d11c2f23.js.map": "/kabab-app/static/js/main.d11c2f23.js.map",
+    "453.a2dcf160.chunk.js.map": "/kabab-app/static/js/453.a2dcf160.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb6bb565.css",
+    "static/js/main.d11c2f23.js"
+  ]
+}
