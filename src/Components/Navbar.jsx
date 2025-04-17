@@ -19,11 +19,11 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-100 dark:bg-gray-900 shadow-md">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="ml-[-1rem] sm:ml-2 text-xl font-bold text-gray-800 dark:text-white">
+            <span className="ml-[1rem] sm:ml-4 text-xl font-bold text-gray-800 dark:text-white">
               ShopMe
             </span>
           </div>
@@ -69,15 +69,15 @@ const Navbar = () => {
           {/* Search, Cart, Theme */}
           <div className="flex items-center">
             {/* Search Bar */}
-            <div className="relative rounded-lg overflow-hidden flex items-center bg-white dark:bg-gray-800">
+            <div className="relative rounded-lg overflow-hidden flex items-center bg-white dark:bg-gray-800 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
               <input
                 type="text"
                 placeholder="Search"
-                className="py-1 pl-3 pr-10 w-48 outline-none text-gray-700 dark:text-white dark:bg-gray-800"
+                className="py-2 pl-3 pr-10 w-full text-sm sm:text-base outline-none text-gray-700 dark:text-white dark:bg-gray-800"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button className="absolute right-0 top-0 h-full px-2 text-gray-600 hover:text-gray-800 dark:text-white">
+              <button className="absolute right-0 top-0 h-full px-3 text-gray-600 hover:text-gray-800 dark:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
